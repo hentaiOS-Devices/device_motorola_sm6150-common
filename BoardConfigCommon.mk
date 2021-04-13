@@ -182,6 +182,9 @@ TARGET_COPY_OUT_VENDOR := vendor
 # Media
 TARGET_DISABLED_UBWC := true
 
+# Properties
+TARGET_PRODUCT_PROP += $(VENDOR_PATH)/product.prop
+
 ifeq ($(PRODUCT_USE_DYNAMIC_PARTITIONS), true)
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
