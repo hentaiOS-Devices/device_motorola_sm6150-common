@@ -27,6 +27,13 @@ $(call inherit-product-if-exists, vendor/motorola/sm6150-common/sm6150-common-ve
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
+# Utils
+$(call inherit-product, $(LOCAL_PATH)/utils.mk)
+
+# Include core-utils soong namespace
+PRODUCT_SOONG_NAMESPACES += \
+    vendor/qcom/sm8150/codeaurora/core-utils
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
@@ -261,14 +268,16 @@ PRODUCT_PACKAGES += \
     libgnsspps \
     libsynergy_loc_api
 
-PRODUCT_PACKAGES += \
-    apdr.conf \
-    flp.conf \
-    gps.conf \
-    izat.conf \
-    lowi.conf \
-    sap.conf \
-    xtwifi.conf
+# GPS configuration file
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf \
+    $(LOCAL_PATH)/configs/izat.conf:$(TARGET_COPY_OUT_VENDOR)/etc/izat.conf \
+    $(LOCAL_PATH)/configs/lowi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/lowi.conf \
+    $(LOCAL_PATH)/configs/sap.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sap.conf \
+    $(LOCAL_PATH)/configs/apdr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/apdr.conf \
+    $(LOCAL_PATH)/configs/flp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/flp.conf \
+    $(LOCAL_PATH)/configs/xtwifi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/xtwifi.conf \
+    $(LOCAL_PATH)/configs/gnss_antenna_info.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gnss_antenna_info.conf
 
 # Health
 PRODUCT_PACKAGES += \
@@ -325,6 +334,9 @@ PRODUCT_PACKAGES += \
     libebtc
 
 # Media
+PRODUCT_PACKAGES += \
+    libavservices_minijail.vendor
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media_codecs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs.xml \
     $(LOCAL_PATH)/configs/media_codecs_v1.xml:$(TARGET_COPY_OUT_VENDOR)/etc/media_codecs_v1.xml \
@@ -354,6 +366,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libchrome \
     libchrome.vendor
+
+# Display
+TARGET_BOARD_PLATFORM := sm6150
+
+-include hardware/qcom/sm8150/display/config/display-board.mk
+-include hardware/qcom/sm8150/display/config/display-product.mk
+include hardware/qcom/sm8150/display/display-commonsys-intf/config/display-interfaces-product.mk
+include hardware/qcom/sm8150/display/display-commonsys-intf/config/display-product-system.mk
 
 # MotoActions
 PRODUCT_PACKAGES += \
@@ -446,7 +466,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
 	$(LOCAL_PATH) \
     hardware/google/interfaces \
-    hardware/google/pixel
+    hardware/google/pixel \
+    hardware/qcom/sm8150 \
+    hardware/qcom/sm8150/display \
+    hardware/qcom/sm8150/gps \
+    hardware/qcom/sm8150/media
 
 # Telephony
 PRODUCT_PACKAGES += \
