@@ -243,15 +243,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.3-service.clearkey
 
-# FM
-PRODUCT_PACKAGES += \
-    FM2 \
-    libqcomfm_jni \
-    init.qti.fm.sh \
-    qcom.fmradio
-
-PRODUCT_BOOT_JARS += qcom.fmradio
-
 # For config.fs
 PRODUCT_PACKAGES += \
     fs_config_files
@@ -325,11 +316,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     ethertypes \
     libebtc
-
-# LiveDisplay
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service-sdm \
-    vendor.lineage.livedisplay@2.0-service-sysfs.motorola_sm6150
 
 # Media
 PRODUCT_COPY_FILES += \
