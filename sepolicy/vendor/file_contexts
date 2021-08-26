@@ -51,3 +51,6 @@
 
 # Thermal
 /dev/mmi_sys_temp                                       u:object_r:thermal_device:s0
+
+# Aosp hal - wants this
+/vendor/bin/hw/android\.hardware\.graphics\.composer@2\.4-service-sm8150              u:object_r:hal_graphics_composer_default_exec:s0
