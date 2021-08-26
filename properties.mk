@@ -49,7 +49,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.audio.monitorRotation=true
 
 PRODUCT_ODM_PROPERTIES += \
-    vendor.audio.feature.a2dp_offload.enable=true \
     vendor.audio.feature.afe_proxy.enable=true \
     vendor.audio.feature.anc_headset.enable=true \
     vendor.audio.feature.audiozoom.enable=false \
@@ -92,17 +91,19 @@ PRODUCT_ODM_PROPERTIES += \
     vendor.audio.feature.vbat.enable=true \
     vendor.audio.feature.wsa.enable=false
 
-# Bluetooth
+# Bluetooth SoC
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.qcom.bluetooth.enable.splita2dp=true \
-    persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
-    persist.vendor.qcom.bluetooth.soc=cherokee \
-    ro.bluetooth.a2dp_offload.supported=true \
     vendor.qcom.bluetooth.soc=cherokee
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.bluetooth.library_name=libbluetooth_qti.so \
-    vendor.bluetooth.soc=cherokee
+    ro.bluetooth.library_name=libbluetooth_qti.so
+
+# Bluetooth A2DP offload
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.bluetooth.a2dp_offload.cap=sbc-aac-aptx-aptxhd-ldac \
+    persist.bluetooth.a2dp_offload.disabled=false \
+    persist.vendor.bt.aac_frm_ctl.enabled=true \
+    ro.bluetooth.a2dp_offload.supported=true
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
