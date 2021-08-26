@@ -123,9 +123,11 @@ BOARD_SUPPORTS_SOUND_TRIGGER := true
 USE_XML_AUDIO_POLICY_CONF := 1
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(VENDOR_PATH)/bluetooth/include
-TARGET_FWK_SUPPORTS_FULL_VALUEADDS := true
-TARGET_USE_QTI_BT_STACK := true
+BOARD_HAVE_BLUETOOTH_QCOM := true
+BOARD_HAVE_QCOM_FM := false
+TARGET_USE_QTI_BT_SAR := true
+# TODO(b/123695868): Remove the need for this
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := build/make/target/board/mainline_arm64/bluetooth
 
 # Camera
 TARGET_USES_QTI_CAMERA_DEVICE := true
@@ -229,6 +231,9 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy/vendor
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --set_hashtree_disabled_flag
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 2
+# HOLY CTS LORDS - Don't patch plz google
+BOARD_KERNEL_CMDLINE += androidboot.verifiedbootstate=green androidboot.vbmeta.device_state=locked
+# HOLY CTS LORDS - Don't patch plz google
 
 # WiFi
 BOARD_WLAN_DEVICE := qcwcn
