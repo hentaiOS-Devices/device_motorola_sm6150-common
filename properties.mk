@@ -89,6 +89,7 @@ PRODUCT_ODM_PROPERTIES += \
     vendor.audio.feature.usb_offload_burst_mode.enable=true \
     vendor.audio.feature.usb_offload_sidetone_volume.enable=false \
     vendor.audio.feature.vbat.enable=true \
+    vendor.audio.feature.a2dp_offload.enable=true \
     vendor.audio.feature.wsa.enable=false
 
 # Bluetooth SoC
