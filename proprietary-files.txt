@@ -69,7 +69,7 @@ vendor/lib64/libaudioalsa.so
 vendor/lib64/libaudioparsers.so
 vendor/lib64/libqtigef.so
 
-# Bluetooth
+# Bluetooth - from Sunfish
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
@@ -88,14 +88,10 @@ vendor/lib64/libbtnv.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
 vendor/lib64/vendor.qti.hardware.bt_channel_avoidance@1.0.so
-
-# Bluetooth - Audio
 vendor/lib/btaudio_offload_if.so
 vendor/lib/libbluetooth_audio_session_qti.so
 vendor/lib64/btaudio_offload_if.so
 vendor/lib64/libbluetooth_audio_session_qti.so
-
-# Bluetooth (aptX)
 system_ext/lib64/libaptX_encoder.so
 system_ext/lib64/libaptXHD_encoder.so
 
@@ -108,14 +104,27 @@ vendor/lib64/libcdsp_default_listener.so
 vendor/lib64/libcdsprpc.so
 vendor/lib64/libsdsprpc.so
 
-# CNE
-system_ext/framework/vendor.qti.data.factory-V1.0-java.jar
-system_ext/framework/vendor.qti.data.factory-V2.0-java.jar
-system_ext/framework/vendor.qti.data.factory-V2.1-java.jar
-system_ext/framework/vendor.qti.hardware.data.dynamicdds-V1.0-java.jar
-system_ext/lib/vendor.qti.hardware.data.dynamicdds@1.0.so
-system_ext/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so
+# CNE - from Sunfish
 -vendor/app/CneApp/CneApp.apk
+-system_ext/framework/vendor.qti.hardware.data.connection-V1.0-java.jar
+-system_ext/framework/vendor.qti.hardware.data.dynamicdds-V1.0-java.jar
+-system_ext/framework/vendor.qti.hardware.data.latency-V1.0-java.jar
+system_ext/lib/com.quicinc.cne.api@1.0.so
+system_ext/lib/com.quicinc.cne.api@1.1.so
+system_ext/lib/com.quicinc.cne.constants@1.0.so
+system_ext/lib/com.quicinc.cne.constants@2.0.so
+system_ext/lib/com.quicinc.cne.constants@2.1.so
+system_ext/lib/vendor.qti.hardware.data.cne.internal.api@1.0.so
+system_ext/lib/vendor.qti.hardware.data.cne.internal.constants@1.0.so
+system_ext/lib/vendor.qti.hardware.data.cne.internal.server@1.0.so
+system_ext/lib64/com.quicinc.cne.api@1.0.so
+system_ext/lib64/com.quicinc.cne.api@1.1.so
+system_ext/lib64/com.quicinc.cne.constants@1.0.so
+system_ext/lib64/com.quicinc.cne.constants@2.0.so
+system_ext/lib64/com.quicinc.cne.constants@2.1.so
+system_ext/lib64/vendor.qti.hardware.data.cne.internal.api@1.0.so
+system_ext/lib64/vendor.qti.hardware.data.cne.internal.constants@1.0.so
+system_ext/lib64/vendor.qti.hardware.data.cne.internal.server@1.0.so
 vendor/bin/cnd
 vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml
 vendor/etc/cne/wqeclient/ATT/ATT_profile2.xml
@@ -144,20 +153,6 @@ vendor/etc/cne/wqeclient/VZW/VZW_profile3.xml
 vendor/etc/cne/wqeclient/VZW/VZW_profile4.xml
 vendor/etc/cne/wqeclient/VZW/VZW_profile5.xml
 vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml
-vendor/etc/init/cnd.rc
-vendor/lib/libcne.so
-vendor/lib/libcneapiclient.so
-vendor/lib/libcneoplookup.so
-vendor/lib/libcneqmiutils.so
-vendor/lib/libwms.so
-vendor/lib/libwqe.so
-vendor/lib/libxml.so
-vendor/lib/vendor.qti.data.factory@2.0.so
-vendor/lib/vendor.qti.data.factory@2.1.so
-vendor/lib/vendor.qti.data.slm@1.0.so
-vendor/lib/vendor.qti.hardware.data.dynamicdds@1.0.so
-vendor/lib/vendor.qti.hardware.data.qmi@1.0.so
-vendor/lib/vendor.qti.hardware.slmadapter@1.0.so
 vendor/lib64/libcne.so
 vendor/lib64/libcneapiclient.so
 vendor/lib64/libcneoplookup.so
@@ -168,9 +163,14 @@ vendor/lib64/libxml.so
 vendor/lib64/vendor.qti.data.factory@2.0.so
 vendor/lib64/vendor.qti.data.factory@2.1.so
 vendor/lib64/vendor.qti.data.slm@1.0.so
+vendor/lib64/vendor.qti.hardware.data.cne.internal.api@1.0.so
+vendor/lib64/vendor.qti.hardware.data.cne.internal.constants@1.0.so
+vendor/lib64/vendor.qti.hardware.data.cne.internal.server@1.0.so
+vendor/lib64/vendor.qti.hardware.data.connection@1.0.so
+vendor/lib64/vendor.qti.hardware.data.connection@1.1.so
 vendor/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so
+vendor/lib64/vendor.qti.hardware.data.iwlan@1.0.so
 vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so
-vendor/lib64/vendor.qti.hardware.slmadapter@1.0.so
 
 # ConfigStore
 system_ext/framework/vendor.qti.hardware.capabilityconfigstore-V1.0-java.jar
